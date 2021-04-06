@@ -1,8 +1,10 @@
 ## Описание папок
 
-test_app - скрипт для теста всех функций pioneer mini
-joy_control - скрипт управления pioneer mini с помощью джойстиков от PS4 и XBox 360
-pioneer_sdk - библиотека необходимая для работы всех скриптов
+1) test_app - скрипт для теста всех функций pioneer mini
+   * testPioneer.py - скрипт теста всех функций pioneer mini
+   * Joystick.py 
+2) joy_control - скрипт управления pioneer mini с помощью джойстиков от PS4 и XBox 360
+3) pioneer_sdk - библиотека необходимая для работы всех скриптов
 
 ## Тестирование с помощью testPioneer.py
 Необходимо подключить pioneer mini по wifi к кпомпьютеру и запустить скрипт.
