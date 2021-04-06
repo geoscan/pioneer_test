@@ -2,9 +2,12 @@
 
 1) test_app - скрипт для теста всех функций pioneer mini
    * testPioneer.py - скрипт теста всех функций pioneer mini
-   * Joystick.py 
-2) joy_control - скрипт управления pioneer mini с помощью джойстиков от PS4 и XBox 360
+   * testSetup.py - сборка тестового скрипта в exe приложение
+2) joy_control - скрипт управления pioneer mini с помощью джойстиков от PS4 и XBox
+   * Joystick.py - библиотека обработки джойстиков
+   * joy_control.py - скрипт для управления пионером с джойстика
 3) pioneer_sdk - библиотека необходимая для работы всех скриптов
+   * piosdk.py - библиотека упраления коптером
 
 ## Тестирование с помощью testPioneer.py
 Необходимо подключить pioneer mini по wifi к кпомпьютеру и запустить скрипт.
