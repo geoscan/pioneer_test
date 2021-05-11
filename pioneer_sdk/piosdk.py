@@ -448,3 +448,19 @@ class Pioneer:
                                                             self.__mavlink_socket.target_component, channel_1,
                                                             channel_2, channel_3, channel_4, channel_5, channel_6,
                                                             channel_7, channel_8)
+
+    def get_position(self, blocking=False):
+        position = self.__mavlink_socket.recv_match(type='LOCAL_POSITION_NED', blocking=blocking,
+                                                    timeout=self.__ack_timeout)
+
+        if not position:
+            return
+        if position.get_type() == "BAD_DATA":
+            if mavutil.all_printable(position.data):
+                sys.stdout.write(position.data)
+                sys.stdout.flush()
+        else:
+            if self.__logger:
+                print("X: {x}, Y: {y}, Z: {z}, YAW: {yaw}".format(x=position.x, y=position.y, z=-position.z,
+                                                                  yaw=position.yaw))
+            return position

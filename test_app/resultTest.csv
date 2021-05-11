@@ -1,0 +1,5 @@
+time,12-04-2021 12:33:55
+ESP32:,"""0.2.7"""
+autopilot: ,"""1.6.7481"""
+Arm: ,True
+Disarm: ,True

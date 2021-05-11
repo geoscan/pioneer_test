@@ -42,6 +42,7 @@ class Joystick:
     def ps4_xbox(self, threshold, x, y, z, yaw):
         for i in range(self.joystick_count):
             if self.joyInd != None:
+                # считывание значения осей
                 axis0 = self.joystick[i].get_axis(0)
                 axis1 = self.joystick[i].get_axis(1)
                 axis2 = self.joystick[i].get_axis(2)
@@ -61,7 +62,7 @@ class Joystick:
 
                 #  правый стик, движение влево вправо
                 if (axis2 > threshold) or (axis2 < -threshold):
-                    yaw += self.increment_deg * axis2
+                    yaw -= self.increment_deg * axis2
                     self.new_command = True
 
                 #  правый стик, движение вверх вниз

@@ -259,17 +259,17 @@ if __name__ == '__main__':
 
     print('Для положительного ответа нажмите введите "+" и нажмите enter')
 
-    led(pioneer_mini, table)
-    distSensor(pioneer_mini, table)
+    #led(pioneer_mini, table)
+    #distSensor(pioneer_mini, table)
     #cam(pioneer_mini, table)
     arm(pioneer_mini, table)
     disarm(pioneer_mini, table)
-    takeoff(pioneer_mini, table)
-    flight(pioneer_mini, table)
-    luaScript(pioneer_mini, table)
-    rcChannels(pioneer_mini, table)
-    disconnect(pioneer_mini, table)
-    land(pioneer_mini, table)
+    #takeoff(pioneer_mini, table)
+    #flight(pioneer_mini, table)
+    #luaScript(pioneer_mini, table)
+    #RcChannels(pioneer_mini, table)
+    #disconnect(pioneer_mini, table)
+    #land(pioneer_mini, table)
 
     print("########## РЕЗУЛЬТАТ ##########")
 
