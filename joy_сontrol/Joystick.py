@@ -3,10 +3,9 @@ import math
 
 class Joystick:
 
-
     def __init__(self):
         self.joystick_count = pygame.joystick.get_count() # количество подключенных джойстиков
-        self.joyInd = [None, None, None] # массив хранения индексов джойстиков. Порядок храннения: PS4, cobra, xBox
+        self.joyInd = [None, None, None, None] # массив хранения индексов джойстиков. Порядок храннения: PS4, cobra, xBox
 
         # Выдача джойстикам соответствующих индексов
         for i in range(self.joystick_count):
@@ -18,13 +17,16 @@ class Joystick:
                 self.joyInd[1] = i
             if joystick.get_name() == "Xbox 360 Controller":
                 self.joyInd[2] = i
+            if joystick.get_name() == "Logitech Rumblepad 2 USB":
+                self.joyInd[3] = i
 
-        self.joystick = [None, None, None] # Массив хрнения джойстиков. Порядок храннения: PS4, cobra, xBox
-        for i in range(3):
+        self.joystick = [None, None, None, None] # Массив хрнения джойстиков. Порядок храннения: PS4, cobra, xBox
+        for i in range(4):
             if self.joyInd[i] != None:
                 self.joystick[i] = pygame.joystick.Joystick(self.joyInd[i])  # создаем объект джойстик
                 self.joystick[i].init()  # инициализируем джойстик
-                print('Джойстик 0 подключен: ' + self.joystick[i].get_name())
+                print('Джойстик подключен: ' + self.joystick[i].get_name())
+                print(i)
             else:
                 print("Джойстик не найден")
 
@@ -43,10 +45,10 @@ class Joystick:
         for i in range(self.joystick_count):
             if self.joyInd != None:
                 # считывание значения осей
-                axis0 = self.joystick[i].get_axis(0)
-                axis1 = self.joystick[i].get_axis(1)
-                axis2 = self.joystick[i].get_axis(2)
-                axis3 = self.joystick[i].get_axis(3)
+                axis0 = self.joystick[3].get_axis(0)
+                axis1 = self.joystick[3].get_axis(1)
+                axis2 = self.joystick[3].get_axis(2)
+                axis3 = self.joystick[3].get_axis(3)
 
                 #  левый стик, движение влево вправо
                 if (axis1 > threshold) or (axis1 < -threshold):

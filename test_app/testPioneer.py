@@ -249,7 +249,7 @@ def disconnect(pioneer, table):
 if __name__ == '__main__':
 
     print('Инициализация пионера\n')
-    pioneer_mini = Pioneer(logger= False)  # инициализируем пионера
+    pioneer_mini = Pioneer(logger=False)  # инициализируем пионера
 
 
     table = []
@@ -263,6 +263,9 @@ if __name__ == '__main__':
     #distSensor(pioneer_mini, table)
     #cam(pioneer_mini, table)
     arm(pioneer_mini, table)
+
+    time.sleep(3)
+
     disarm(pioneer_mini, table)
     #takeoff(pioneer_mini, table)
     #flight(pioneer_mini, table)

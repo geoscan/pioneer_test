@@ -76,12 +76,13 @@ if __name__ == '__main__':
         # если координаты изменились, то отправляем их
         if joy.new_command:
             pioneer_mini.go_to_local_point(x=round(x, 2), y=round(y, 2), z=round(z, 2), yaw=round(yaw, 2))
+            #pioneer_mini.send_rc_channels()
             joy.new_command = False
 
         # вывод картинки с камеры
-        frame_cv2 = cv2.imdecode(np.frombuffer(pioneer_mini.get_raw_video_frame(), dtype=np.uint8), cv2.IMREAD_COLOR)
-        frame_pygame = pygame.image.frombuffer(frame_cv2.tostring(), (640, 480), "RGB")
-        sc.blit(frame_pygame, (0, 0))
+        #frame_cv2 = cv2.imdecode(np.frombuffer(pioneer_mini.get_raw_video_frame(), dtype=np.uint8), cv2.IMREAD_COLOR)
+        #frame_pygame = pygame.image.frombuffer(frame_cv2.tostring(), (640, 480), "RGB")
+        #sc.blit(frame_pygame, (0, 0))
 
         pygame.display.update()
 
